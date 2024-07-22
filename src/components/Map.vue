@@ -32,12 +32,18 @@
         disableDefaultUi: false,
       }"
     >
+      <GmapCircle
+        :center="mapCoordinates"
+        :radius="150"
+        :options="{ fillOpacity: 0.5, strokeWeight: 0.5, fillColor: 'blue' }"
+      />
       <GmapMarker
         :position="mapCoordinates"
         :clickable="true"
         :draggable="true"
         @drag="updateMarker(index, $event.latLng)"
-    /></GmapMap>
+      />
+    </GmapMap>
   </div>
 </template>
 <script>
